@@ -16,14 +16,8 @@ const upload = multer({ dest: './uploads/' });
 createStorage();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: 'http://localhost:5173',
-  })
-);
+app.use(cors({ origin: process.env.ALLOWED_ORIGIN }));
 app.use('/uploads', express.static('./uploads')); // damit express wenn die route 'uploads' heißt das bild in dem order sucht
-
-console.log(process.env.PORT);
 
 //$ email validation muss noch verbessert werden
 // const schema = Joi.object({
