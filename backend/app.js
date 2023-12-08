@@ -24,7 +24,6 @@ app.use(
 app.use('/uploads', express.static('./uploads')); // damit express wenn die route 'uploads' heißt das bild in dem order sucht
 
 console.log(process.env.PORT);
-console.log(process.env.VITE_BACKENDURL);
 
 //$ email validation muss noch verbessert werden
 // const schema = Joi.object({
