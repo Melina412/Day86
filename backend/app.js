@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
 import Joi from 'joi';
+import 'dotenv/config';
 import {
   saveEntry,
   createStorage,
@@ -65,24 +66,5 @@ app.put('/api/entries', upload.single('userimg'), (req, res) => {
     .catch(() => res.status(500).end());
 });
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 console.log(process.env);
-
-//
-//
-//
 app.listen(PORT, () => console.log('express läuft auf port', PORT));
