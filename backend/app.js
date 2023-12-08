@@ -10,7 +10,7 @@ import {
   editEntry,
 } from './utils/files.js';
 
-const PORT = 9898;
+const PORT = process.env.PORT;
 const app = express();
 const upload = multer({ dest: './uploads/' });
 createStorage();
@@ -22,6 +22,9 @@ app.use(
   })
 );
 app.use('/uploads', express.static('./uploads')); // damit express wenn die route 'uploads' heißt das bild in dem order sucht
+
+console.log(process.env.PORT);
+console.log(process.env.VITE_BACKENDURL);
 
 //$ email validation muss noch verbessert werden
 // const schema = Joi.object({
@@ -66,5 +69,4 @@ app.put('/api/entries', upload.single('userimg'), (req, res) => {
     .catch(() => res.status(500).end());
 });
 
-console.log(process.env);
 app.listen(PORT, () => console.log('express läuft auf port', PORT));

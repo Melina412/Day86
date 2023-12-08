@@ -10,7 +10,7 @@ function Entry({ entry, fetchData, edit, setEdit }) {
         <div className='user'>
           <div className='img-wrapper'>
             <img
-              src={`http://localhost:9898/${entry.userimg}`}
+              src={`${import.meta.env.VITE_BACKENDURL}/${entry.userimg}`}
               alt={entry.name}
             />
           </div>

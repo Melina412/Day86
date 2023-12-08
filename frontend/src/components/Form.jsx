@@ -10,7 +10,7 @@ function Form({ fetchData, edit, setEdit }) {
     let date = new_date.toLocaleDateString();
     form.set('date', date);
 
-    fetch('http://localhost:9898/api/entries', {
+    fetch(`${import.meta.env.VITE_BACKENDURL}/api/entries`, {
       method: 'POST',
       body: form,
     }).then((res) => {

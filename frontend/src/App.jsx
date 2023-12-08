@@ -11,7 +11,7 @@ function App() {
   }, []);
 
   const fetchData = () => {
-    fetch('http://localhost:9898/api/entries')
+    fetch(`${import.meta.env.VITE_BACKENDURL}/api/entries`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
